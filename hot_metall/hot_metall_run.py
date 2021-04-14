@@ -5,7 +5,7 @@ Created on Wed Apr 14 18:14:12 2021
 
 @author: honepa
 """
-import time
+from time import sleep
 import sys
 from serial import Serial, SerialException
 
@@ -47,9 +47,12 @@ if __name__ == '__main__':
     
     mega = Arduino(1)
     print(mega)
+    sleep(4)
     mega.port.write(str(40).encode())
+    sleep(4)
     mega.port.write(str(43).encode())
     print(mega.port.readline().decode())
+    sleep(0.5)
     mega.port.write(str(45).encode())
     #print(mega.port.readline().decode())
     #mega.port.write(str(50).encode())
