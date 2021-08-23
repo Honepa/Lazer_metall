@@ -51,9 +51,14 @@ if __name__ == '__main__':
     mega.port.write(str(40).encode())
     sleep(4)
     mega.port.write(str(43).encode())
-    print(mega.port.readline().decode())
+    #print(mega.port.readline().decode())
     sleep(0.5)
-    mega.port.write(str(45).encode())
+    for i in range(100):
+        sleep(10)
+        mega.port.write(str(50).encode())
+        sleep(10)
+        mega.port.write(str(32).encode())
+        print("run")
     #print(mega.port.readline().decode())
     #mega.port.write(str(50).encode())
     del mega
